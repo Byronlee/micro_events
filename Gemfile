@@ -1,48 +1,79 @@
-source 'https://rubygems.org'
+# source 'http://rubygems.org'
+source 'http://ruby.taobao.org'
 
+gem 'rails', '4.1.6'
+gem 'pg', '0.17.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0.beta1'
-# Use postgresql as the database for Active Record
-gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.0.beta1'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+# Auth_client
+gem 'omniauth', '1.2.2'
+gem 'omniauth-identity', '1.1.1'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+# role
+gem 'rolify', '3.4.1'
+gem 'chosen-rails', '1.1.1'
+gem 'cancancan', '1.9.2'
+# tree
+gem 'acts_as_tree', github: 'amerine/acts_as_tree'
+gem 'paperclip', '4.2.0'
+gem 'sass-rails', github: 'rails/sass-rails', branch: '4-0-stable'
+# state machine
+gem 'state_machine'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'faye'
+gem 'thin'
+gem 'http'
+gem 'will_paginate-bootstrap'
+gem 'forem', :github => "radar/forem", :branch => "rails4"
+gem 'mini_magick'
 
-# Use Rails Html Sanitizer for HTML sanitization
-gem 'rails-html-sanitizer', '~> 1.0'
+#controller
+gem 'responders'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-group :development, :test do
-  # Call 'debugger' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
-  # Access an IRB console on exceptions page and /console in development
-  gem 'web-console', '~> 2.0.0.beta2'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+group :default do
+  gem 'slim-rails', '2.1.5'
+  gem "less-rails", '2.5.0'
+  gem 'coffee-rails', '4.0.1'
+#  gem 'rails_admin', '0.6.3'
+  gem 'font-awesome-rails', '4.2.0.0'
+  gem 'therubyracer', '0.12.1'
+  gem "twitter-bootstrap-rails", '3.2.0'
+  gem 'uglifier'
+  gem 'jquery-rails'
+  gem 'simple_form', '3.0.2'
+  gem 'jbuilder'
+  gem 'epic-editor-rails'
+  gem 'ruby-pinyin'
+  gem 'redcarpet'
+  gem 'forem-gfm_formatter'
+  gem 'diffy'
 end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'rspec-rails', '3.1.0'
+  gem 'guard-rspec', '4.3.1'
+  gem 'spork-rails', '4.0.0'
+  gem 'guard-spork', '1.5.1'
+  gem 'factory_girl_rails', '4.4.1'
+  gem "simplecov", "~> 0.9.0", require: false
+end
+
+group :test, :development do
+  gem 'pry', "~> 0.9.12.2"
+  gem 'pry-debugger', "~> 0.2.2"
+  gem "annotate"
+end
+
+group :development do
+  gem 'pry-rails'
+  gem "capsum", "~> 1.0.1", require: false
+  gem 'capistrano', '~> 3.2.0'
+  gem 'capistrano-rails', '~> 1.1.0'
+  gem 'capistrano-bundler', '~> 1.1.0'
+  gem 'capistrano-rvm', '~> 0.1.0'
+  gem 'capistrano-passenger', '~> 0.0.1'
+end
+
+gem 'guard-livereload', group: [:development, :test], require: false
+gem 'debugger', group: [:development, :test]
 
